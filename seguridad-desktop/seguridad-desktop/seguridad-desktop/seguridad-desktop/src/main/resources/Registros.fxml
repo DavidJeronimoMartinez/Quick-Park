@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.controllers.RegistrosController">
+
+    <children>
+
+        <!-- Botón volver -->
+        <Button layoutX="10.0" layoutY="10.0"
+                text="Volver"
+                onAction="#volver"
+                style="-fx-background-color: #f44336; -fx-text-fill: white;" />
+
+        <!-- Título -->
+        <Label layoutX="280.0" layoutY="15.0"
+               text="REGISTROS DE CONDUCTORES"
+               style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+
+        <!-- Barra de búsqueda -->
+        <TextField fx:id="txtBuscar"
+                   layoutX="150.0"
+                   layoutY="60.0"
+                   prefWidth="500.0"
+                   promptText="Buscar por matrícula o número de empleado..."
+                   onKeyReleased="#filtrarDatos"/>
+
+        <!-- Tabla -->
+        <TableView fx:id="tablaRegistros"
+                   layoutX="50.0"
+                   layoutY="110.0"
+                   prefHeight="430.0"
+                   prefWidth="700.0">
+
+            <columns>
+                <TableColumn fx:id="colMatricula" text="Matrícula / No.Empleado" prefWidth="150"/>
+                <TableColumn fx:id="colRol" text="Rol" prefWidth="120"/>
+                <TableColumn fx:id="colPlaca" text="Placa" prefWidth="120"/>
+                <TableColumn fx:id="colMarca" text="Marca" prefWidth="150"/>
+                <TableColumn fx:id="colModelo" text="Modelo" prefWidth="120"/>
+            </columns>
+
+        </TableView>
+
+    </children>
+</AnchorPane>
