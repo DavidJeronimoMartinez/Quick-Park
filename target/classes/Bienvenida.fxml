@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.geometry.Insets?>
+
+<VBox prefHeight="700.0" prefWidth="1100.0" style="-fx-background-color: #F2E7D1;" stylesheets="@/styles.css" 
+      xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="com.example.controllers.BienvenidaController">
+   <children>
+      <HBox alignment="CENTER_LEFT" prefHeight="150.0" spacing="20.0" style="-fx-background-color: #8D203D;">
+         <children>
+            <VBox alignment="CENTER" spacing="2.0">
+               <children>
+                  <Button onAction="#cerrarSesion" style="-fx-background-color: transparent; -fx-cursor: hand;">
+                     <graphic>
+                        <StackPane>
+                           <Circle fill="WHITE" radius="35.0" />
+                           <Circle fill="#009432" radius="32.0" />
+                           <Label style="-fx-font-size: 24px; -fx-font-weight: bold;" text="⏻" textFill="WHITE" />
+                        </StackPane>
+                     </graphic>
+                  </Button>
+                  <Label text="Terminar turno" textFill="WHITE" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+               </children>
+               <padding><Insets left="30.0" /></padding>
+            </VBox>
+            <Region HBox.hgrow="ALWAYS" />
+            <Label style="-fx-font-weight: bold; -fx-font-size: 90px;" text="QUICK-PARK" textFill="WHITE" />
+            <Region HBox.hgrow="ALWAYS" />
+            <ImageView fitHeight="125.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true">
+               <image><Image url="@/logo.jpg" /></image>
+               <clip><Circle centerX="55.0" centerY="55.0" radius="55.0" /></clip>
+            </ImageView>
+         </children>
+         <padding><Insets right="25.0" /></padding>
+      </HBox>
+
+      <HBox alignment="CENTER" VBox.vgrow="ALWAYS" spacing="40.0">
+         <children>
+<VBox alignment="CENTER" spacing="70.0">
+   <children>
+      <Button onAction="#guardarDatos" prefHeight="45.0" prefWidth="210.0" styleClass="btn-menu-dark" text="Ingresar conductor" />
+      <Button onAction="#irAVistaEstacionamiento" prefHeight="45.0" prefWidth="210.0" styleClass="btn-menu-green" text="Vista de estacionamiento" />
+      <Button onAction="#abrirRegistros" prefHeight="45.0" prefWidth="210.0" styleClass="btn-menu-dark" text="Vista de conductores" />
+   </children>
+</VBox>
+
+            <VBox alignment="TOP_CENTER" spacing="20.0" prefWidth="800.0" styleClass="main-container-white">
+               <children>
+                  <Label fx:id="lblMensaje" text="Bienvenido, Guardia #..." style="-fx-font-size: 22px; -fx-font-weight: bold;" textFill="#8D203D" />
+                  
+                  <HBox spacing="80.0" alignment="CENTER">
+                     <children>
+                        <VBox spacing="15.0">
+                           <children>
+                              <Label text="Datos del Conductor" style="-fx-font-weight: bold; -fx-font-size: 18px;" textFill="#8D203D" />
+                              <Separator />
+                              <Label text="Matrícula / Num Empleado:" />
+                              <TextField fx:id="txtMatricula" prefHeight="35.0" styleClass="input-field"/>
+                              <Label text="Rol:" />
+                              <ComboBox fx:id="comboRol" prefHeight="35.0" prefWidth="300.0" />
+                              <Label text="Tipo de Vehículo:" />
+                              <ComboBox fx:id="comboTipo" prefHeight="35.0" prefWidth="300.0" />
+                           </children>
+                        </VBox>
+
+                        <VBox spacing="15.0">
+                           <children>
+                              <Label text="Datos de la Unidad" style="-fx-font-weight: bold; -fx-font-size: 18px;" textFill="#8D203D" />
+                              <Separator />
+                              <Label text="Placa:" />
+                              <TextField fx:id="txtPlaca" prefHeight="35.0" styleClass="input-field"/>
+                              <Label text="Marca:" />
+                              <TextField fx:id="txtMarca" prefHeight="35.0" styleClass="input-field"/>
+                              <Label text="Modelo:" />
+                              <TextField fx:id="txtModelo" prefHeight="35.0" styleClass="input-field"/>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <Region VBox.vgrow="ALWAYS" />
+               </children>
+               <padding><Insets bottom="40.0" left="40.0" right="40.0" top="30.0" /></padding>
+               <HBox.margin><Insets top="40.0" bottom="40.0" /></HBox.margin>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</VBox>

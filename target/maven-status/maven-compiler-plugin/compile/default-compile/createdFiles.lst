@@ -1,0 +1,15 @@
+com\example\controllers\Registro.class
+com\example\Main.class
+com\example\vistas\BienvenidaView.class
+com\example\vistas\RegistroView.class
+com\example\models\LugarEstacionamiento.class
+com\example\vistas\LoginView.class
+com\example\controllers\DetalleRegistroController.class
+com\example\controllers\RegistroController.class
+com\example\controllers\LoginController.class
+com\example\controllers\BienvenidaController.class
+com\example\controllers\EstacionamientoController.class
+com\example\App.class
+com\example\services\AuthService.class
+com\example\controllers\RegistrosController.class
+com\example\api\ApiClient.class

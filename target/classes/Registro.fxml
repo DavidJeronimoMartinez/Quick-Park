@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.geometry.Insets?>
+
+<StackPane prefHeight="600.0" prefWidth="950.0" styleClass="fondo-app" stylesheets="@/styles.css" 
+           xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" 
+           fx:controller="com.example.controllers.RegistroController">
+   <children>
+      <VBox alignment="TOP_CENTER" maxHeight="550.0" maxWidth="850.0" spacing="20.0" styleClass="card">
+         <children>
+            <HBox alignment="CENTER_LEFT" spacing="20.0">
+               <children>
+                  <ImageView fx:id="imgLogo" fitHeight="140.0" fitWidth="140.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@/logo.jpg" />
+                     </image>
+                     <clip>
+                        <Circle centerX="60.0" centerY="60.0" radius="60.0" />
+                     </clip>
+                  </ImageView>
+                  <Region HBox.hgrow="ALWAYS" />
+                  <Label text="REGISTRO" style="-fx-font-size: 60px; -fx-font-weight: bold;" textFill="#003366" />
+                  <Region HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+
+            <Separator prefWidth="200.0" />
+
+            <VBox spacing="20.0">
+               <children>
+                  <HBox spacing="15.0">
+                     <children>
+                        <TextField fx:id="txtNombre" prefHeight="40.0" promptText="Nombre(s)" HBox.hgrow="ALWAYS" />
+                        <TextField fx:id="txtApellidoP" prefHeight="40.0" promptText="Apellido Paterno" HBox.hgrow="ALWAYS" />
+                        <TextField fx:id="txtApellidoM" prefHeight="40.0" promptText="Apellido Materno" HBox.hgrow="ALWAYS" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" spacing="15.0">
+                     <children>
+                        <Label style="-fx-font-weight: bold; -fx-font-size: 16px;" text="Numero de Empleado:" textFill="#003366" />
+                        <TextField fx:id="txtNum" prefHeight="40.0" promptText="Número de Empleado" HBox.hgrow="ALWAYS" />
+                     </children>
+                  </HBox>
+                  <HBox spacing="15.0">
+                     <children>
+                        <PasswordField fx:id="txtPass" prefHeight="40.0" promptText="Contraseña" HBox.hgrow="ALWAYS" />
+                        <PasswordField fx:id="txtPassConfirm" prefHeight="40.0" promptText="Confirmar Contraseña" HBox.hgrow="ALWAYS" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+
+            <VBox alignment="CENTER" spacing="10.0">
+               <children>
+                  <Button onAction="#registrar" prefHeight="50.0" prefWidth="280.0" styleClass="btn-primary" text="Registrar" />
+                  <Button onAction="#volverLogin" styleClass="btn-link" text="¿Ya estás registrado? da clic aquí para ir al login" />
+                  <Label fx:id="mensaje" wrapText="true" />
+               </children>
+            </VBox>
+         </children>
+         <padding>
+            <Insets bottom="30.0" left="50.0" right="50.0" top="20.0" />
+         </padding>
+      </VBox>
+   </children>
+</StackPane>

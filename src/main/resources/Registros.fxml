@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.geometry.Insets?>
+
+<VBox prefHeight="700.0" prefWidth="1100.0" style="-fx-background-color: #F2E7D1;" stylesheets="@/styles.css" 
+      xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="com.example.controllers.RegistrosController">
+   <children>
+      <HBox alignment="CENTER_LEFT" prefHeight="150.0" spacing="20.0" style="-fx-background-color: #8D203D;">
+         <children>
+            <VBox alignment="CENTER" spacing="2.0">
+               <children>
+                  <Button onAction="#volver" style="-fx-background-color: transparent; -fx-cursor: hand;">
+                     <graphic>
+                        <StackPane>
+                           <Circle fill="WHITE" radius="35.0" />
+                           <Circle fill="#8D203D" radius="32.0" />
+                           <Label style="-fx-font-size: 30px; -fx-font-weight: bold;" text="←" textFill="WHITE" />
+                        </StackPane>
+                     </graphic>
+                  </Button>
+                  <Label text="Regresar" textFill="WHITE" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+               </children>
+               <padding><Insets left="30.0" /></padding>
+            </VBox>
+
+            <Region HBox.hgrow="ALWAYS" />
+            <Label style="-fx-font-weight: bold; -fx-font-size: 70px;" text="REGISTROS" textFill="WHITE" />
+            <Region HBox.hgrow="ALWAYS" />
+
+            <ImageView fitHeight="125.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@/logo.jpg" />
+               </image>
+               <clip>
+                  <Circle centerX="55.0" centerY="55.0" radius="55.0" />
+               </clip>
+            </ImageView>
+         </children>
+         <padding><Insets right="25.0" /></padding>
+      </HBox>
+
+      <VBox spacing="20.0" VBox.vgrow="ALWAYS" styleClass="main-container-white">
+         <VBox.margin>
+            <Insets top="30.0" bottom="30.0" left="50.0" right="50.0" />
+         </VBox.margin>
+         <children>
+            <HBox alignment="CENTER_LEFT" spacing="15.0">
+               <children>
+                  <Label text="Buscar:" style="-fx-font-weight: bold; -fx-font-size: 18px;" textFill="#8D203D" />
+                  <TextField fx:id="txtBuscar" HBox.hgrow="ALWAYS" onKeyReleased="#filtrarDatos"
+                             prefHeight="40.0" promptText="Ingrese matrícula o número de empleado para filtrar..." 
+                             styleClass="input-field" />
+               </children>
+            </HBox>
+
+            <TableView fx:id="tablaRegistros" VBox.vgrow="ALWAYS">
+               <columns>
+                  <TableColumn fx:id="colMatricula" text="Matrícula / No. Empleado" prefWidth="200" />
+                  <TableColumn fx:id="colRol" text="Rol" prefWidth="120" />
+                  <TableColumn fx:id="colTipo" text="Tipo" prefWidth="100" />
+                  <TableColumn fx:id="colPlaca" text="Placa" prefWidth="120" />
+                  <TableColumn fx:id="colMarca" text="Marca" prefWidth="180" />
+                  <TableColumn fx:id="colModelo" text="Modelo" prefWidth="180" />
+               </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+         </children>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+      </VBox>
+   </children>
+</VBox>
